@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
 
 @Component({
     //moduleId: module.id,
-    selector: 'ssv_excel',
-    templateUrl: 'app.component.html',
+    selector: 'ssv-excel',
+    templateUrl: 'app/app.component.html',
 })
-
 export class AppComponent {}
