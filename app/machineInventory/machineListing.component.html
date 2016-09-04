@@ -1,5 +1,5 @@
 <div>
     <div *ngFor="let machine of machines">
-        <h2>{{machine.school}}</h2>
+        <h2><a routerLink="/machines/{{machine.id}}">{{machine.school.name}}</a></h2>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Column } from './column';
+import { School } from './school';
 
 export enum machineType { 'fourColumn' = 0, 'eightColumn' = 1 }
 
@@ -17,6 +18,7 @@ export class Machine {
 
     }
 
-    public school: String;
+    public id: Number;
+    public school: School;
     public columns: Column[] = [];
 }
