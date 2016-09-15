@@ -1,0 +1,14 @@
+docker pull <image>
+docker images = lists images
+docker ps = lists containers
+docker ps -a = lists containers including ones not running
+docker rm <container id> = Removes a container
+docker rmi <image id> = remove an image
+
+
+
+
+
+
+
+docker run -p 8080:3000 -v $c:/Git/Whatever:/var/www -w "/var/www" node npm start
