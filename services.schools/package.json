@@ -1,0 +1,23 @@
+{
+  "name": "services.schools",
+  "version": "0.0.1",
+  "description": "REST api for managing schools and sticker inventory.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "tsc && concurrently \"npm run tsc:w\" \"npm run gulp\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "gulp": "gulp"
+  },
+  "author": "Eric Gonia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "gulp": "^1.0.0",
+    "gulp-nodemon": "^2.1.0"
+  }
+}

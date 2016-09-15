@@ -1,0 +1,11 @@
+{
+  "generator-ng-fullstack": {
+    "username": "ericgonia",
+    "appName": "services.schools",
+    "stack": "server",
+    "server": "node",
+    "client": "",
+    "transpilerServer": "typescript",
+    "secure": true
+  }
+}
