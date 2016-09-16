@@ -4,7 +4,7 @@ docker ps = lists containers
 docker ps -a = lists containers including ones not running
 docker rm <container id> = Removes a container
 docker rmi <image id> = remove an image
-
+docker build -f <dockerfile> -t <tag> <workdir>
 
 
 
@@ -12,3 +12,18 @@ docker rmi <image id> = remove an image
 
 
 docker run -p 8080:3000 -v $c:/Git/Whatever:/var/www -w "/var/www" node npm start
+docker run -d -p 8080:3000 <image> = -d runs in daemon mode, so you get the console back
+
+
+
+
+Docker File Commands
+FROM <image>:<version> = use <image> as base. <version> is optional
+MAINTAINER <your name>
+RUN <command> = run a command as part of the build process
+COPY <source> <destination> = copies files into the container
+ENTRYPOINT <["json", "array", "of", "commands"]> = what is the initial command to run when starting the container
+WORKDIR <path> = where to start when executing the ENTRYPOINT
+EXPOSE port = port to listen on
+ENV <variable>=<value> = set environment variables
+VOLUME ["json", "array"]= create a volume
