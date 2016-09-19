@@ -3,21 +3,26 @@ docker images = lists images
 docker ps = lists containers
 docker ps -a = lists containers including ones not running
 docker rm <container id> = Removes a container
+docker rm -f $(docker ps -a -q) = remove all containers
 docker rmi <image id> = remove an image
 docker build -f <dockerfile> -t <tag> <workdir>
+docker network create --driver bridge <network_name>
+docker network ls = view existing networks
+docker volume create --name=mongodata = create a named volume locally. You can then use this inplace of a local path
 
 
-
-
-
-
-docker run -p 8080:3000 -v $c:/Git/Whatever:/var/www -w "/var/www" node npm start
+docker run -p 8080:3000 -v c:/Git/Whatever:/var/www -w "/var/www" node npm start
 docker run -d -p 8080:3000 <image> = -d runs in daemon mode, so you get the console back
+docker run -d -p 27017:27017 -v c:/Mongo/data:/var/data mongo
+
+
+==Run Options==
+--name <name> = names a container which can be used like a hostname
+--net=<network name> = use a bridge network for this container
 
 
 
-
-Docker File Commands
+==Docker File Commands==
 FROM <image>:<version> = use <image> as base. <version> is optional
 MAINTAINER <your name>
 RUN <command> = run a command as part of the build process
@@ -27,3 +32,9 @@ WORKDIR <path> = where to start when executing the ENTRYPOINT
 EXPOSE port = port to listen on
 ENV <variable>=<value> = set environment variables
 VOLUME ["json", "array"]= create a volume
+
+==Docker Compose Commands==
+docker-compose build
+docker-compose up -d
+docker-compose down
+docker-compose logs

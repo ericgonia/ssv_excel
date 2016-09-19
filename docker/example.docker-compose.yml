@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+
+    node:
+        build:
+            context: ../services.schools
+            dockerfile: ../services.schools/dockerfiles/dev.dockerfile
+        ports:
+            - "8080:8080"
+        networks:
+            - ssv-network
+
+    mongodb:
+        image: mongodb
+        networks:
+            - ssv-network
+
+networks:
+    ssv-network:
+        driver: bridge
