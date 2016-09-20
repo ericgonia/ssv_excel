@@ -4,10 +4,10 @@
   "description": "REST api for managing schools and sticker inventory.",
   "main": "app.js",
   "scripts": {
-    "dev": "tsc && concurrently \"npm run tsc:w\" \"npm run gulp\"",
+    "dev": "tsc && concurrently \"npm run tsc:w\" \"npm run supervisor\"",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "gulp": "gulp"
+    "supervisor": "supervisor app.js"
   },
   "author": "Eric Gonia",
   "license": "ISC",

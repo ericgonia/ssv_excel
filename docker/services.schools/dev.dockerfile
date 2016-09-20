@@ -1,16 +1,15 @@
-cd FROM node
+FROM node
 
 MAINTAINER Eric Gonia
 
-ENV NODE_ENV=production
+ENV NODE_ENV=dev
 ENV PORT=3000
-ENV WHATSUP=Matt is lame
 
-COPY . /var/www
+VOLUME c:\Git\ssv_excel\services.schools /var/www
 WORKDIR /var/www
 
-RUN npm install
+RUN npm install typescript supervisor -g && npm install
 
 EXPOSE $PORT
 
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["npm", "run", "dev"]

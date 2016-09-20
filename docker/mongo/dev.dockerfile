@@ -13,4 +13,4 @@ VOLUME mongodata /data/db
 
 EXPOSE $PORT
 
-#ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["/entrypoint.sh", "mongo"]
