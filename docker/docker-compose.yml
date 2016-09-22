@@ -2,19 +2,34 @@ version: '2'
 
 services:
 
-    ssvui:
+    ssvapi:
+        container_name: ssvapi
         build:
             context: ../services.schools
-            dockerfile: ../services.schools/dockerfiles/dev.dockerfile
+            dockerfile: ./services.schools/dev.dockerfile
         ports:
             - "8080:8080"
+        environment:
+            - NODE_ENV=development
         networks:
             - ssv-network
 
-    mongodb:
-        image: mongodb
+    ssvui:
+        container_name: ssvui
+        build:
+            context: ../ui
+            dockerfile: ./ui/dev.dockerfile
+        ports:
+            - "80:80"
+        environment:
+            - NODE_ENV=development
         networks:
             - ssv-network
+
+#    mongodb:
+#        image: mongodb
+#        networks:
+#            - ssv-network
 
 networks:
     ssv-network:
