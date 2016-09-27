@@ -1,7 +1,8 @@
+/// <reference path="../../typings/index.d.ts" />
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema();
+//var Schema = mongoose.Schema();
 
-var school = new Schema({
+var school = mongoose.Schema({
     name: { type: String }
 });
 
