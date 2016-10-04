@@ -1,8 +1,8 @@
 /// <reference path="../../typings/index.d.ts" />
-var mongoose = require('mongoose');
+import * as mongoose from 'mongoose';
 //var Schema = mongoose.Schema();
 
-var school = mongoose.Schema(
+var school = new mongoose.Schema(
     {
     name: { type: String },
     contacts: [
@@ -33,4 +33,4 @@ var school = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('School', school);
+export default school;
