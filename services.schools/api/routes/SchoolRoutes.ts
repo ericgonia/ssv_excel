@@ -1,22 +1,22 @@
 import * as express from 'express';
-import * as School from '../models/School';
+import {SchoolRepository} from '../repositories/SchoolRepository';
 
 export class SchoolRoutes {
+    
     static init(router: express.Router) {
         router.route('/schools')
-            .get((req: any, res: any) => {
-                var query = {};
-                if (typeof req.query.name !== "undefined" && req.query.name !== "") {
-                    query = { "name": { $regex: ".*" + req.query.name + ".*", $options: "i" } };
+            .get((request: any, response: any) => {
+                if (typeof request.query.name !== "undefined" && request.query.name !== "") {
+                    SchoolRepository.findByName(request.query.name)
+                        .then(schools => response.status(200).json(schools))
+                        .catch(error => response.status(500).json(error))
+                } else {
+                    SchoolRepository.findAll()
+                        .then(schools => response.status(200).json(schools))
+                        .catch(error => response.status(500).json(error))
                 }
 
-                School.find(query, (err: any, schools: any) => {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        res.json(schools);
-                    }
-                });
             });
     }
+
 }

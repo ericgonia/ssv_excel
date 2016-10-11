@@ -2,7 +2,7 @@
 import * as mongoose from 'mongoose';
 //var Schema = mongoose.Schema();
 
-var school = new mongoose.Schema(
+var schoolSchema = new mongoose.Schema(
     {
     name: { type: String },
     contacts: [
@@ -33,4 +33,4 @@ var school = new mongoose.Schema(
   }
 );
 
-export default school;
+export default schoolSchema;
