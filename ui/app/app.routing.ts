@@ -1,21 +1,21 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { MachineListingComponent } from './machineInventory/machineListing.component';
-import { MachineDetailsComponent } from './machineInventory/machineDetails.component';
+import { SchoolListingComponent } from './schools/schoolListing.component';
+import { SchoolDetailsComponent } from './schools/schoolDetails.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/machines',
+    redirectTo: '/schools',
     pathMatch: 'full'
   },
   {
-    path: 'machines',
-    component: MachineListingComponent
+    path: 'schools',
+    component: SchoolListingComponent
   },
   {
-    path: 'machines/:id',
-    component: MachineDetailsComponent
+    path: 'schools/:id',
+    component: SchoolDetailsComponent
   },
 ];
 
